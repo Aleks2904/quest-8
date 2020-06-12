@@ -33,7 +33,7 @@ ul{
     list-style-type: none;
 }
 
-p{
+h1, h2, h3, h4, h5, h6, p{
     margin: 0;
 }
 
@@ -56,22 +56,4 @@ p{
     clear:both;
 
     content:'';
-}
-
-.svg-sprites{
-    position:absolute;
-
-    overflow:hidden;
-    clip:rect(1px 1px 1px 1px);
-    clip:rect(1px, 1px, 1px, 1px);
-
-    width:1px;
-    height:1px;
-    padding:0;
-
-    opacity: 0;
-    top: 0;
-    left: 0;
-
-    border:0;
 }
