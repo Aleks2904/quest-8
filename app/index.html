@@ -18,44 +18,52 @@
 <body>
     <header class="header">
         <div class="logo-block">
-            <img class="logo-block__img" src="img/img/logo-white.jpg" alt="логотип">
+            <img class="logo-block__logo-img" src="img/img/logo-white.jpg" alt="логотип">
 
-            <h1 class="logo-block__title">
-                HIGH JEWELRY
-            </h1>
-
-            <p class="logo-block__subtitle">
-                Смотреть коллекцию
-            </p>
+            <div class="logo-block__text-block">
+                <h1 class="logo-block__title">
+                    HIGH JEWELRY
+                </h1>
+    
+                <p class="logo-block__subtitle">
+                    Смотреть коллекцию
+                </p>
+            </div>
 
             <div class="logo-block__language-bar">
-                <span class="logo-block__lang logo-block__lang_activ">
+                <a class="logo-block__lang logo-block__lang_activ">
                     ru
-                </span>
+                </a>
 
-                <span class="logo-block__lang">
+                <a class="logo-block__lang">
                     en
-                </span>
+                </a>
             </div>
         </div>
 
+        <picture>
+            <source type="image/webp" srcset="img/img/ring-h.webp">
+
+            <img class="header__img" src="img/img/ring-h.png" alt="кольцо">
+        </picture>
+
         <div class="menu-block">
             <div class="menu-block__activ-menu">
-                <a class="menu-block__heart-link"></a>
+                <a class="menu-block__activ-menu-link"></a>
 
-                <a class="menu-block__man-link"></a>
+                <a class="menu-block__activ-menu-link"></a>
 
-                <a class="menu-block__bag-link"></a>
+                <a class="menu-block__activ-menu-link"></a>
             </div>
 
             <nav class="nav">
-                <button class="nav__btn">
-                    <svg class="nav__btn-svg">
-                       <use class="nav__btn-svg_burger" xlink:href="img/svg/burger.svg"></use>
-
-                       <use class="nav__btn-svg_close" xlink:href="img/svg/close.svg"></use>
-                    </svg>
+                <button class="nav__btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header">
+                       <span class="nav__btn-svg_burger"></span>
                 </button>
+
+                <div class="nav__block" id="js-nav-header">
+
+                </div>
             </nav>
 
             <div class="menu-block__commodity-block">
@@ -75,10 +83,64 @@
         </div>
     </header>
 
-
-
     <main class="main">
+        <section class="section-man-woman">
+            <div class="man-woman-block">
+                <div class="man-woman-block__img-block">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s1-1.webp">
+    
+                        <img class="man-woman-block__img" src="img/img/s1-1.png" alt="мужчина">
+                    </picture>
 
+                    <div class="man-woman-block__opacity"></div>
+                </div>
+
+                <h2 class="man-woman-block__title">
+                    <a>
+                        Перейти в раздел <span class="man-woman-block__title_gender">Для&nbsp;мужчин</span>
+                    </a>
+                </h2>
+            </div>
+
+            <div class="man-woman-block">
+                <div class="man-woman-block__img-block">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s1-2.webp">
+    
+                        <img class="man-woman-block__img" src="img/img/s1-2.png" alt="мужчина">
+                    </picture>
+
+                    <div class="man-woman-block__opacity"></div>
+                </div>
+
+                <h2 class="man-woman-block__title">
+                    <a>
+                        Перейти в раздел <span class="man-woman-block__title_gender">Для&nbsp;женщин</span>
+                    </a>
+                </h2>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="info-block">
+                <h2 class="info-block__title">
+                    Найди бутик&nbsp;около&nbsp;себя
+                </h2>
+
+                <p class="info-block__subtitle">
+                    Введите свой адрес и узнайте о самых ближайших бутиках к вам
+                </p>
+
+                <form class="info-block__form">
+                    <input class="info-block__input" type="text" placeholder="Введите адрес">
+
+                    <button class="info-block__btn" type="submit"></button>
+                </form>
+            </div>
+
+            <div class="card-block"></div>
+        </section>
     </main>
 
     <footer class="footer">

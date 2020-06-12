@@ -3,7 +3,7 @@
     font-style: normal;
     font-family: "FuturaPT";
     font-display: swap;
-    src: local("Roboto Bold"), url("../fonts/FuturaPT-Light.woff2") format("woff2"), url("../fonts/FuturaPT-Light.woff") format("woff"); 
+    src: local("FuturaPT"), url("../fonts/FuturaPT-Light.woff2") format("woff2"), url("../fonts/FuturaPT-Light.woff") format("woff"); 
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
     font-family: "FuturaPT";
     font-display: swap;
-    src: local("Roboto Mediyn"), url("../fonts/FuturaPT-Book.woff2") format("woff2"), url("../fonts/FuturaPT-Book.woff") format("woff"); 
+    src: local("FuturaPT"), url("../fonts/FuturaPT-Book.woff2") format("woff2"), url("../fonts/FuturaPT-Book.woff") format("woff"); 
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-style: normal;
     font-family: "FuturaPT";
     font-display: swap;
-    src: local("Roboto Bold"), url("../fonts/FuturaPT-Medium.woff2") format("woff2"), url("../fonts/FuturaPT-Medium.woff") format("woff"); 
+    src: local("FuturaPT"), url("../fonts/FuturaPT-Medium.woff2") format("woff2"), url("../fonts/FuturaPT-Medium.woff") format("woff"); 
 }
 
 @font-face {
@@ -27,7 +27,7 @@
     font-style: italic;
     font-family: "SegoeUI";
     font-display: swap;
-    src: local("Roboto Regular"), url("../fonts/SegoeUI-Italic.woff2") format("woff2"), url("../fonts/SegoeUI-Italic.woff") format("woff"); 
+    src: local("SegoeUI"), url("../fonts/SegoeUI-Italic.woff2") format("woff2"), url("../fonts/SegoeUI-Italic.woff") format("woff"); 
 }
 
     
@@ -36,7 +36,7 @@
     font-style: italic;
     font-family: "SegoeUI";
     font-display: swap;
-    src: local("Roboto Regular"), url("../fonts/SegoeUI-Light-Italic.woff2") format("woff2"), url("../fonts/SegoeUI-Light-Italic.woff") format("woff");
+    src: local("Segoe UI"), url("../fonts/SegoeUI-Light-Italic.woff2") format("woff2"), url("../fonts/SegoeUI-Light-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -44,6 +44,6 @@
     font-style: normal;
     font-family: "Forum";
     font-display: swap;
-    src: local("Roboto Regular"), url("../fonts/Forum.woff2") format("woff2"), url("../fonts/Forum.woff") format("woff");
+    src: local("Forum"), url("../fonts/Forum.woff2") format("woff2"), url("../fonts/Forum.woff") format("woff");
 }
 
