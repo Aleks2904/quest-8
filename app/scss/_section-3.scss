@@ -1,0 +1,170 @@
+.product-example {
+    max-height: 820px;
+    margin-bottom: 20px;
+    
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "min-1 big min-3"
+                         "min-2 big min-4";
+
+    grid-template-columns: 27.7% 1fr 27.7%;
+
+    &__min-block {
+        max-height: 400px;
+
+        background: #EDEDED;
+
+        position: relative;
+
+        &_1 {
+            grid-area: min-1;
+        }
+
+        &_2 {
+            grid-area: min-2;
+        }
+
+        &_3 {
+            grid-area: min-3;
+        }
+
+        &_4 {
+            grid-area: min-4;
+        }
+    }
+
+    &__min-img {
+        &_1 {
+            position: absolute;
+
+            top: 11.75%;
+            left: 50%;
+
+            transform: translate(-50%,0);
+        }
+
+        &_2 {
+            position: absolute;
+
+            top: 15%;
+            left: 50%;
+
+            transform: translate(-50%,0);
+        }
+
+        &_3 {
+            position: absolute;
+
+            top: -5%;
+            left: 50%;
+
+            transform: translate(-50%,0);
+        }
+
+        &_4 {
+            position: absolute;
+
+            top: -2.5%;
+            left: 50%;
+
+            transform: translate(-50%,0);
+        }
+    }
+
+    &__min-info-block{
+        position: absolute;
+
+        bottom: 20px;
+        left: 30px;
+    }
+
+    &__min-title {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #272727;
+
+        margin-bottom: 9px;
+    }
+
+    &__min-description {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: #757575;
+
+        margin-bottom: 9px;
+    }
+
+    &__min-price {
+        font-family: "SegoeUI, sans-serif";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+
+        letter-spacing: 0.03em;
+
+        color: #E2B67A;
+    }
+
+    &__big-block {
+        max-height: 820px;
+
+        grid-area: big;
+
+        position: relative;
+    }
+
+    &__big-info-block{
+        position: absolute;
+
+        bottom: 20px;
+        left: 30px;
+    }
+
+    &__big-img {
+        width: 100%;
+        max-height: 820px;
+    }
+
+    &__big-title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+
+        margin-bottom: 9px;
+    }
+
+    &__big-description {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: #E7E7E7;
+
+        margin-bottom: 9px;
+    }
+
+    &__big-price {
+        font-family: "SegoeUI, sans-serif";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+
+        letter-spacing: 0.03em;
+
+        color: #E2B67A;
+    }
+}

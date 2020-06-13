@@ -3,6 +3,8 @@
     max-height: 604px;
     height: 100%;
 
+    margin-bottom: 20px;
+
     display: flex;
 }
 .info-block {
@@ -74,7 +76,7 @@
             border: none;
             outline: none;
             background: transparent;
-            @include inline-svg-icon("right-arrow", #FFFFFF,#FFFFFF, center, 28px 15px);
+            @include inline-svg-icon("right-arrow", #FFFFFF, #FFFFFF, center, 28px 15px);
             background-repeat: no-repeat;
 		}
 }
