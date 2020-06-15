@@ -12,6 +12,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/all.css">
+<!--
+    <link rel="stylesheet" href="css/libs/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">-->
 
     <title>HIGH JEWELRY</title>
 </head>
@@ -57,9 +61,7 @@
             </div>
 
             <nav class="nav">
-                <button class="nav__btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header">
-                       <span class="nav__btn-svg_burger"></span>
-                </button>
+                <button class="nav__btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header"></button>
 
                 <div class="nav__block" id="js-nav-header">
 
@@ -87,7 +89,7 @@
         <section class="section-man-woman">
             <div class="man-woman-block">
                 <div class="man-woman-block__img-block">
-                    <picture>
+                    <picture  class="man-woman-block__img"> 
                         <source type="image/webp" srcset="img/img/s1-1.webp">
     
                         <img class="man-woman-block__img" src="img/img/s1-1.png" alt="мужчина">
@@ -105,7 +107,7 @@
 
             <div class="man-woman-block">
                 <div class="man-woman-block__img-block">
-                    <picture>
+                    <picture class="man-woman-block__img">
                         <source type="image/webp" srcset="img/img/s1-2.webp">
     
                         <img class="man-woman-block__img" src="img/img/s1-2.png" alt="мужчина">
@@ -304,12 +306,90 @@
                         <button class="spam-form__btn" type="submit"></button>
                     </form>
                 </div>
-                </div>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a class="footer__link"> 
+                    работа в компании
+                </a>
+            </li>
 
+            <li class="footer__item">
+                <a class="footer__link"> 
+                    условия пользования
+                </a>
+            </li>
+
+            <li class="footer__item">
+                <a class="footer__link"> 
+                    выходные данные
+                </a>
+            </li>
+
+            <li class="footer__item">
+                <a class="footer__link"> 
+                    политика конфиденциальности
+                </a>
+            </li>
+
+            <li class="footer__item">
+                <a class="footer__link"> 
+                    карта сайта
+                </a>
+            </li>
+        </ul>
+
+        <img class="footer__logo" src="img/img/logo-black.png" alt="логотип">
+
+        <div class="footer__block-phone">
+            <h2 class="footer__title-phone">
+                телефон горячей линии
+            </h2>
+
+            <a class="footer__link-phone" href="tel:+7800456456">
+                +7 800 456 456
+            </a>
+
+            <ul class="footer__social-nt-list">
+                <li class="footer__social-nt-item">
+                    <a class="footer__social-nt-link footer__social-nt-link_facebook" aria-label="ссылка на фейсбук"></a>
+                </li>
+
+                <li class="footer__social-nt-item">
+                    <a class="footer__social-nt-link footer__social-nt-link_inst" aria-label="ссыылка на инстаграмм"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__news-block">
+            <h3 class="footer__news-title">
+                подпишитесь на новости
+            </h3>
+
+            <form class="footer__news-form">
+                <input class="footer__news-input" type="email" placeholder="Введите E-mail">
+
+                <button class="footer__news-btn" type="submit"></button>
+            </form>
+
+            <ul class="footer__market-list">
+                <li class="footer__market-item">
+                    <a class="footer__market-link">
+                        <img class="footer__market-img" src="img/img/apple-store.png" alt="app store">
+                    </a>
+                </li>
+
+                <li class="footer__market-item">
+                    <a class="footer__market-link">
+                        <img class="footer__market-img" src="img/img/google-store.png" alt="google play">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </footer>
 
     <script src="js/all.js"></script>

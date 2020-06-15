@@ -1,5 +1,7 @@
 .social-networks {
-    padding: 11.3% 0;
+    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 88px;
     background: #272727;
 
     position: relative;
@@ -14,53 +16,71 @@
 
         color: #FFFFFF;
 
-        margin-left: 162px;
+        margin-left: 161px;
     }
 
-		&__list {
-            align-self: flex-end;
-            display: flex;
+    &__list {
+        align-self: flex-end;
+        display: flex;
 
-            margin-left: 162px;
-		}
+        margin-left: 157px;
+    }
 
-		&__item {
-            padding: 10px 0;
+    &__item {
+        padding: 10px 0;
 
-            margin-right: 20px;
+        margin-right: 14px;
 
-            &:last-child{
-                margin-right: 0;
-            }
-		}
-
-		&__link {
-            padding: 10px 20px;
-
-            background-repeat: no-repeat;
-            background-position: center;
-
-            &_fc {
-                @include inline-svg-icon("facebook", #FFFFFF, #FFFFFF, center, 15px);
-			}
-
-			&_inst {
-                @include inline-svg-icon("Instagram", #FFFFFF, #FFFFFF, center, 15px);
-			}
+        &:last-child{
+            margin-right: 0;
         }
-        
+    }
 
-        &__temporarily{
-            font-family: "Forum";
-            font-weight: 400;
-            font-size: 48px;
-            line-height: 53px;
+    &__link {
+        padding: 20px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+
+        cursor: pointer;
+        display: block;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transition: transform 0.3s;
+            transform: scale(1.2);
             
-            letter-spacing: 0.03em;
-        
-            color: #FFFFFF;
-        
-            margin-left: 162px;
-            margin-top: 100px;
         }
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+
+        &_fc {
+            @include inline-svg-icon("facebook", #FFFFFF, #FFFFFF, center, 15px);
+        }
+
+        &_inst {
+            @include inline-svg-icon("Instagram", #FFFFFF, #FFFFFF, center, 15px);
+        }
+    }
+    
+
+    &__temporarily{
+        font-family: "Forum";
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 53px;
+        
+        letter-spacing: 0.03em;
+    
+        color: #FFFFFF;
+
+        padding: 189.5px;
+    
+        margin-left: 162px;
+        margin-top: 100px;
+    }
 }

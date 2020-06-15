@@ -7,6 +7,7 @@
 
     display: flex;
 }
+
 .info-block {
     width: 50%;
     background: #272727;
@@ -15,7 +16,7 @@
 
     align-items: center;
 
-		&__title {
+      &__title {
             width: 90%;
             font-family: "Forum";
             font-size: 48px;
@@ -26,10 +27,9 @@
             color: #FFFFFF;
 
             margin-bottom: 16px;
+      }
 
-		}
-
-		&__subtitle {
+      &__subtitle {
             font-weight: 300;
             font-size: 18px;
             line-height: 23px;
@@ -37,14 +37,14 @@
             margin-bottom: 55px;
 
             color: #FFFFFF;
-		}
+      }
 
-		&__form {
+      &__form {
             position: relative;
             width: 386px;
-		}
+      }
 
-		&__input {
+      &__input {
             outline: none;
             border: none;
             background: transparent;
@@ -59,15 +59,15 @@
             padding-right: 50px;
 
             &::placeholder{
-                font-weight: 300;
-                font-size: 18px;
-                line-height: 23px;
-                
-                color: rgba(255, 255, 255, 0.4); 
+                  font-weight: 300;
+                  font-size: 18px;
+                  line-height: 23px;
+                  
+                  color: rgba(255, 255, 255, 0.4);    
             }
-		}
+      }
 
-		&__btn {
+      &__btn {
             position: absolute;
             right: 0;
             bottom: 10px;
@@ -78,7 +78,22 @@
             background: transparent;
             @include inline-svg-icon("right-arrow", #FFFFFF, #FFFFFF, center, 28px 15px);
             background-repeat: no-repeat;
-		}
+
+            cursor: pointer;
+
+            transition: transform 0.3s;
+
+            &:hover{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+                  
+            }
+
+            &:focus{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+            }
+      }
 }
 .card-block {
     width: 50%;

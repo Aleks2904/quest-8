@@ -1,0 +1,244 @@
+.footer {
+    padding: 80px 11.25% 88px;
+
+    background: #272727;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "list list list list list list"
+                         "logo logo . phone phone news";
+
+    &__list {
+        grid-area: list;
+
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 90px;
+    }
+
+    &__item{
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+            
+        }
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+    }
+
+    &__link {
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 18px;
+
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+
+    &__logo {
+        grid-area: logo;
+
+        margin-top: 17px;
+      
+    }
+
+    &__block-phone {
+        grid-area: phone;
+
+        margin-left: 21%;
+    }
+
+    &__title-phone {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+
+        margin-bottom: 15px;
+
+    }
+
+    &__link-phone {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: #C2C2C2;
+
+        display: inline-block;
+        margin-bottom: 13px;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+            
+        }
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+    }
+
+    &__social-nt-list {
+        display: flex;
+    }
+
+    &__social-nt-item {
+        padding: 11px 0;
+
+        margin-right: 20px;
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+            
+        }
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__social-nt-link {
+        padding: 11px 17px;
+
+        &_facebook {
+            @include inline-svg-icon("facebook", #DADADA, center, 33.5px);
+        }
+
+        &_inst {
+            @include inline-svg-icon("Instagram",#DADADA, center, 33.5px);
+        }
+    }
+
+    &__news-block {
+        grid-area: news;
+    }
+
+    &__news-title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+
+        margin-bottom: 10px;
+    }
+
+    &__news-form {
+        position: relative;
+        width: 280px;
+
+        margin-bottom: 13px;
+    }
+
+    &__news-input {
+        width: 280px;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: white;
+
+        background: transparent;
+
+        border: none;
+        border-bottom: 1px solid #FFFFFF;
+
+        outline: none;
+
+        padding: 5px 50px 9px 0;
+
+        &::placeholder{
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 23px;
+
+            color: #C2C2C2;
+        }
+    }
+
+    &__news-btn {
+        position: absolute;
+        right: 0;
+        bottom: 13px;
+
+        border: none;
+        outline: none;
+        background: transparent;
+
+        padding: 8px 15px;
+
+        @include inline-svg-icon("right-arrow",#FFFFFF, center, 30px);
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+            
+        }
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+    }
+
+    &__market-list {
+        display: flex;
+    }
+
+    &__market-item {
+        margin-right: 7px;
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:focus{
+            transition: transform 0.3s;
+            transform: scale(1.2);
+        }
+
+        &:nth-child(1){
+            padding-top: 3px;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
