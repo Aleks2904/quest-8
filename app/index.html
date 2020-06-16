@@ -10,65 +10,76 @@
     <link rel="manifest" href="img/f-icon/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="css/all.css">
 <!--
+  <link rel="stylesheet" href="css/all.css">-->
+
     <link rel="stylesheet" href="css/libs/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">-->
+    <link rel="stylesheet" href="css/main.css">
 
     <title>HIGH JEWELRY</title>
 </head>
 <body>
     <header class="header">
+        <h1 class="visually-hidden">
+            украшение для мажоров
+        </h1>
+
         <div class="logo-block">
             <img class="logo-block__logo-img" src="img/img/logo-white.jpg" alt="логотип">
 
             <div class="logo-block__text-block">
-                <h1 class="logo-block__title">
+                <h2 class="logo-block__title">
                     HIGH JEWELRY
-                </h1>
+                </h2>
     
-                <p class="logo-block__subtitle">
+                <a class="logo-block__subtitle">
                     Смотреть коллекцию
-                </p>
-            </div>
-
-            <div class="logo-block__language-bar">
-                <a class="logo-block__lang logo-block__lang_activ">
-                    ru
-                </a>
-
-                <a class="logo-block__lang">
-                    en
                 </a>
             </div>
+
+            <ul class="logo-block__language-list">
+                <li class="logo-block__language-item">
+                    <a class="logo-block__lang logo-block__lang_activ">
+                        ru
+                    </a>
+                </li>
+
+                <li>
+                    <a class="logo-block__lang">
+                        en
+                    </a>
+                </li>
+            </ul>
         </div>
 
-        <picture>
-            <source type="image/webp" srcset="img/img/ring-h.webp">
-
-            <img class="header__img" src="img/img/ring-h.png" alt="кольцо">
-        </picture>
-
         <div class="menu-block">
-            <div class="menu-block__activ-menu">
-                <a class="menu-block__activ-menu-link"></a>
 
-                <a class="menu-block__activ-menu-link"></a>
+            <ul class="menu-block__activ-menu-list">
+                <li class="menu-block__activ-menu-item">
+                    <a class="menu-block__activ-menu-link menu-block__activ-menu-link_1"></a>
+                </li>
 
-                <a class="menu-block__activ-menu-link"></a>
-            </div>
+                <li class="menu-block__activ-menu-item">
+                    <a class="menu-block__activ-menu-link menu-block__activ-menu-link_2"></a>
+                </li>
 
-            <nav class="nav">
-                <button class="nav__btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header"></button>
+                <li class="menu-block__activ-menu-item">
+                    <a class="menu-block__activ-menu-link menu-block__activ-menu-link_3">
+                        <span class="menu-block__activ-menu-link_number-item">
+                            1
+                        </span>
+                    </a>
+                </li>
+            </ul>
 
-                <div class="nav__block" id="js-nav-header">
+            <a class="menu-block__commodity-block">
+                <picture>
+                    <source type="image/webp" srcset="img/img/ring-h.webp">
+        
+                    <img class="menu-block__img" src="img/img/ring-h.png" alt="кольцо">
+                </picture>
 
-                </div>
-            </nav>
-
-            <div class="menu-block__commodity-block">
                 <h2 class="menu-block__commodity-title">
                     КОЛЬЦО TRINITY, Cartier
                 </h2>
@@ -81,8 +92,295 @@
                     498 000 ₽
                 </span>
 
-            </div>
+            </a>
         </div>
+
+        <button id="js-btn-nav" class="header__nav-btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header">
+            <span class="header__nav-btn-burger activ"></span>
+            <span class="header__nav-btn-close"></span>
+        </button>
+
+        <nav id="js-nav" class="nav">
+            <div class="nav__block" id="js-nav-header">
+                <img class="nav__logo" src="img/img/logo-black.png" alt="логотип">
+
+                <ul class="nav__activ-menu-list">
+                    <li class="nav__activ-menu-item">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_1"></a>
+                    </li>
+    
+                    <li class="nav__activ-menu-item">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_2"></a>
+                    </li>
+    
+                    <li class="nav__activ-menu-item">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_3">
+                            <span class="nav__activ-menu-link_number-item">
+                                1
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav__nav-list">
+                    <li class="nav__nav-item nav__nav-item_active">
+                        <a class="nav__nav-link">
+                            Ювелирные изделия
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            часы
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            ароматы
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            бренды
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            изделия из кожи
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            Свадебные украшения
+                        </a>
+                    </li>
+
+                    <li class="nav__nav-item">
+                        <a class="nav__nav-link">
+                            другое
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav__minor-block">
+                    <ul class="nav__minor-list">
+                        <li class="nav__minor-item nav__minor-item_title">
+                            <h2 class="nav__minor-link nav__minor-link_title">
+                                для кого
+                            </h2>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Для женщин
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Для мужчин
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Для детей
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav__minor-list">
+                        <li class="nav__minor-item nav__minor-item_title">
+                            <h2 class="nav__minor-link nav__minor-link_title">
+                                Категории
+                            </h2>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Кольца
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Браслеты
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Колье
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Серьги
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Броши
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav__minor-list">
+                        <li class="nav__minor-item nav__minor-item_title">
+                            <h2 class="nav__minor-link nav__minor-link_title">
+                                материал
+                            </h2>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Изделия <br> с бриллиантами
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Желтое золото
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Белое золото
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Розовое золото
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav__minor-list">
+                        <li class="nav__minor-item nav__minor-item_title">
+                            <h2 class="nav__minor-link nav__minor-link_title">
+                                бренд
+                            </h2>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Mercury
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Chopard
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Cartier
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Graff
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item">
+                            <a class="nav__minor-link">
+                                Garrard
+                            </a>
+                        </li>
+
+                        <li class="nav__minor-item nav__minor-item_all-brend">
+                            <a class="nav__minor-link nav__minor-link_all-brend">
+                                Показать все бренды
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav__foote-block">
+                    <div class="nav__foote-img-block">
+                        <div  class="nav__foote-img-opacity"></div>
+
+                        <picture>
+                            <source type="image/webp" srcset="img/img/nav-img.webp">
+
+                            <img  class="nav__foote-img" src="img/img/nav-img.png" alt="не бритый мужик">
+                        </picture>
+
+                        <p  class="nav__foote-img-description">
+                            Новая коллекция by Mercury
+                        </p>
+
+                        <h2 class="nav__foote-img-title">
+                            JUSTE UN CLOU
+                        </h2>
+
+                        <a class="nav__foote-img-link">
+                            Cмотреть коллекцию
+                        </a>
+                    </div>
+
+                    <div class="nav__foote-contact-block">
+                        <div class="nav__block-phone">
+                            <h2 class="nav__title-phone">
+                                телефон горячей линии
+                            </h2>
+                
+                            <a class="nav__link-phone" href="tel:+7800456456">
+                                +7 800 456 456
+                            </a>
+                
+                            <ul class="nav__social-nt-list">
+                                <li class="nav__social-nt-item">
+                                    <a class="nav__social-nt-link nav__social-nt-link_facebook" aria-label="ссылка на фейсбук"></a>
+                                </li>
+                
+                                <li class="nav__social-nt-item">
+                                    <a class="nav__social-nt-link nav__social-nt-link_inst" aria-label="ссыылка на инстаграмм"></a>
+                                </li>
+                            </ul>
+                        </div>
+                
+                        <div class="nav__news-block">
+                            <h2 class="nav__news-title">
+                                подпишитесь на новости
+                            </h2>
+                
+                            <form class="nav__news-form">
+                                <input class="nav__news-input" type="email" placeholder="Введите E-mail">
+                
+                                <button class="nav__news-btn" type="submit"></button>
+                            </form>
+                
+                            <ul class="nav__market-list">
+                                <li class="nav__market-item">
+                                    <a class="nav__market-link">
+                                        <img class="nav__market-img" src="img/img/apple-store.png" alt="app store">
+                                    </a>
+                                </li>
+                
+                                <li class="nav__market-item">
+                                    <a class="nav__market-link">
+                                        <img class="nav__market-img" src="img/img/google-store.png" alt="google play">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main class="main">
@@ -145,115 +443,117 @@
         </section>
 
         <section class="product-example">
-            <div class="product-example__min-block product-example__min-block_1">
-                <picture>
-                    <source type="image/webp" srcset="img/img/s3-1.webp">
-
-                    <img class="product-example__min-img product-example__min-img_1" src="img/img/s3-1.png" alt="кольцо">
-                </picture>
-                
-                <div class="product-example__min-info-block">
-                    <h2 class="product-example__min-title">
-                        КОЛЬЦО jow’s, Cartier
-                    </h2>
+            <ul class="product-example__list">
+                <li class="product-example__min-block product-example__min-block_1">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s3-1.webp">
     
-                    <p class="product-example__min-description">
-                        Белое золото, бриллианты
-                    </p>
+                        <img class="product-example__min-img product-example__min-img_1" src="img/img/s3-1.png" alt="кольцо">
+                    </picture>
+                    
+                    <div class="product-example__min-info-block">
+                        <h2 class="product-example__min-title">
+                            КОЛЬЦО jow’s, Cartier
+                        </h2>
+        
+                        <p class="product-example__min-description">
+                            Белое золото, бриллианты
+                        </p>
+        
+                        <span class="product-example__min-price">
+                            674 000 ₽
+                        </span>
+                    </div>
+                </li>
     
-                    <span class="product-example__min-price">
-                        674 000 ₽
-                    </span>
-                </div>
-            </div>
-
-            <div class="product-example__min-block product-example__min-block_2">
-                <picture>
-                    <source type="image/webp" srcset="img/img/s3-2.webp">
-
-                    <img class="product-example__min-img product-example__min-img_2" src="img/img/s3-2.png" alt="кольцо">
-                </picture>
-
-                <div class="product-example__min-info-block">
-                    <h2 class="product-example__min-title">
-                        КОЛЬЦО croix, Cartier
-                    </h2>
+                <li class="product-example__min-block product-example__min-block_2">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s3-2.webp">
     
-                    <p class="product-example__min-description">
-                        Желтое, белое, розовое золото
-                    </p>
+                        <img class="product-example__min-img product-example__min-img_2" src="img/img/s3-2.png" alt="кольцо">
+                    </picture>
     
-                    <span class="product-example__min-price">
-                        432 000 ₽
-                    </span>
-                </div>
-            </div>
-
-            <div class="product-example__min-block product-example__min-block_3">
-                <picture>
-                    <source type="image/webp" srcset="img/img/s3-3.webp">
-
-                    <img class="product-example__min-img product-example__min-img_3" src="img/img/s3-3.png" alt="странные серьги">
-                </picture>
-
-                <div class="product-example__min-info-block">
-                    <h2 class="product-example__min-title">
-                        Серьги moon, HUBLOT
-                    </h2>
+                    <div class="product-example__min-info-block">
+                        <h2 class="product-example__min-title">
+                            КОЛЬЦО croix, Cartier
+                        </h2>
+        
+                        <p class="product-example__min-description">
+                            Желтое, белое, розовое золото
+                        </p>
+        
+                        <span class="product-example__min-price">
+                            432 000 ₽
+                        </span>
+                    </div>
+                </li>
     
-                    <p class="product-example__min-description">
-                        Желтое золото, сапфир
-                    </p>
+                <li class="product-example__min-block product-example__min-block_3">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s3-3.webp">
     
-                    <span class="product-example__min-price">
-                        498 000 ₽
-                    </span>
-                </div>
-            </div>
-
-            <div class="product-example__min-block product-example__min-block_4">
-                <picture>
-                    <source type="image/webp" srcset="img/img/s3-4.webp">
-
-                    <img class="product-example__min-img product-example__min-img_4" src="img/img/s3-1.png" alt="серьги">
-                </picture>
-                
-                <div class="product-example__min-info-block">
-                    <h2 class="product-example__min-title">
-                        серьги win, BLANCPAIN
-                    </h2>
+                        <img class="product-example__min-img product-example__min-img_3" src="img/img/s3-3.png" alt="странные серьги">
+                    </picture>
     
-                    <p class="product-example__min-description">
-                        Желтое золото, жемчуг
-                    </p>
+                    <div class="product-example__min-info-block">
+                        <h2 class="product-example__min-title">
+                            Серьги moon, HUBLOT
+                        </h2>
+        
+                        <p class="product-example__min-description">
+                            Желтое золото, сапфир
+                        </p>
+        
+                        <span class="product-example__min-price">
+                            498 000 ₽
+                        </span>
+                    </div>
+                </li>
     
-                    <span class="product-example__min-price">
-                        398 000 ₽
-                    </span>
-                </div>
-            </div>
-
-            <div class="product-example__big-block">
-                <picture>
-                    <source type="image/webp" srcset="img/img/s3-big.webp">
-
-                    <img class="product-example__big-img" src="img/img/s3-big.png" alt="подвеска">
-                </picture>
-
-                <div class="product-example__big-info-block">
-                    <h2 class="product-example__big-title">
-                        КОлье etoile, HUBLOT
-                    </h2>
+                <li class="product-example__min-block product-example__min-block_4">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s3-4.webp">
     
-                    <p class="product-example__big-description">
-                        Белое золото, бриллианты
-                    </p>
+                        <img class="product-example__min-img product-example__min-img_4" src="img/img/s3-1.png" alt="серьги">
+                    </picture>
+                    
+                    <div class="product-example__min-info-block">
+                        <h2 class="product-example__min-title">
+                            серьги win, BLANCPAIN
+                        </h2>
+        
+                        <p class="product-example__min-description">
+                            Желтое золото, жемчуг
+                        </p>
+        
+                        <span class="product-example__min-price">
+                            398 000 ₽
+                        </span>
+                    </div>
+                </li>
     
-                    <span class="product-example__big-price">
-                        539 000 ₽
-                    </span>
-                </div>
-            </div>
+                <li class="product-example__big-block">
+                    <picture>
+                        <source type="image/webp" srcset="img/img/s3-big.webp">
+    
+                        <img class="product-example__big-img" src="img/img/s3-big.png" alt="подвеска">
+                    </picture>
+    
+                    <div class="product-example__big-info-block">
+                        <h2 class="product-example__big-title">
+                            КОлье etoile, HUBLOT
+                        </h2>
+        
+                        <p class="product-example__big-description">
+                            Белое золото, бриллианты
+                        </p>
+        
+                        <span class="product-example__big-price">
+                            539 000 ₽
+                        </span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
         <section class="social-networks">
@@ -366,9 +666,9 @@
         </div>
 
         <div class="footer__news-block">
-            <h3 class="footer__news-title">
+            <h2 class="footer__news-title">
                 подпишитесь на новости
-            </h3>
+            </h2>
 
             <form class="footer__news-form">
                 <input class="footer__news-input" type="email" placeholder="Введите E-mail">

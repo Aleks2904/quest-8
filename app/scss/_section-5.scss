@@ -1,19 +1,20 @@
 .spam-form {
     display: flex;
-    max-height: 640px;
 
     &__img-block{
         width: 49.3%;
     }
 
     &__img {
-        height: 100%;
+        display: flex;
+        width: 100%;
+        object-fit: cover;
     }
 
     &__form-block {
         width: 50%;
 
-        padding: 180px 12.8% 0;
+        padding: 12.5% 12.8% 0;
         
         display: flex;
         flex-direction: column;

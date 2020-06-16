@@ -6,16 +6,58 @@
 
     height: 100vh;
 
-    &__img{
-        position: absolute;
-        z-index: 1;
+    &__nav-btn{
+            position: absolute;
+            z-index: 3;
+            top: 75px;
+            right: 11%;
+            padding: 10px 15px;
+            background: transparent;
+            border: none;
+            outline: none;
 
-        top: 50%;
-        left: 62%;
+            position: absolute;
+            padding: 10px 15px;
+            @include inline-svg-icon("burger", #FFFFFF, center, 30px );
 
-        transform: translate(-50%, -50%);
-    }
+            cursor: pointer;
+
+            transition: transform 0.3s;
+
+            &:hover{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+            }
+
+            &:focus{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+            }
+      }
+
 }
+
+.activ{
+      transition: transform 0.5s !important;
+
+      transform: translate(0%, 0%) !important;
+      opacity: 1 !important;  
+
+      overflow: hidden !important;
+  }
+
+.close-btn{
+      top: 55px;
+
+      padding: 10px 15px;
+      @include inline-svg-icon("close", #FFFFFF, center, 30px );
+
+}
+
+.overflow{
+      overflow: hidden;
+}
+
 .logo-block {
     width: 60.97%;
     padding: 60px 11.25% 60px;
@@ -64,11 +106,32 @@
 
             margin-right: 30px;
             }
+
+            cursor: pointer;
+
+            display: inline-block;
+
+            transition: transform 0.3s;
+
+            &:hover{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+            }
+
+            &:focus{
+                  transition: transform 0.3s;
+                  transform: scale(1.2);
+            }
       }
 
-      &__language-bar {
+      &__language-list {
             align-self: flex-end;
             position: absolute;
+            display: flex;
+      }
+
+      &__language-item{
+            margin-right: 6px;
       }
 
       &__lang {
@@ -77,8 +140,6 @@
             text-transform: uppercase;
             line-height: 21px;
             color: #C4C4C4;
-
-            margin-right: 6px;
 
             cursor: pointer;
 
@@ -100,17 +161,54 @@
     justify-content: space-between;
     position: relative;
 
-		&__activ-menu {
-                  border-right: 1px solid white;
-                  padding-right: 6px;
+		&__activ-menu-list {
                   display: flex;
                   height: 22px;
-		}
+            }
+            
+            &__activ-menu-item{
+                  margin-right: 35px;
+
+                  &:nth-child(2){
+                        margin-right: 29px;
+                  }
+
+                  &:nth-child(3){
+                        margin-right: 0px;
+                  }
+            }
 
 		&__activ-menu-link {
+                  position: relative;
                   padding: 12px;
-                  margin-right: 40px;
                   background-repeat: no-repeat;
+
+                  &_number-item{
+                        position: absolute;
+
+                        top: 50%;
+                        left: 120%;
+                        transform: translate(-0%, -50%);
+
+                        
+                        font-weight: 300;
+                        font-size: 18px;
+                        line-height: 23px;
+
+                        color: #FFFFFF;
+                  }
+
+                  &_1{
+                        @include inline-svg-icon("heart", #272727, center, 24px);
+                  }
+
+                  &_2{
+                        @include inline-svg-icon("man", #272727, center, 16px );
+                  }
+
+                  &_3{
+                        @include inline-svg-icon("bag", #272727, center, 18px );
+                  }
 
                   cursor: pointer;
 
@@ -126,26 +224,22 @@
                         transform: scale(1.2);
                   }
 
-            &:nth-child(1){
-                @include inline-svg-icon("heart", #272727,#FFFFFF, center, 11px,);
-            }
-
-            &:nth-child(2){
-                @include inline-svg-icon("man", #272727,#FFFFFF, center, 11px );
-
-                margin-right: 29px;
-            }
-
-            &:nth-child(3){
-                @include inline-svg-icon("bag", #272727,#FFFFFF, center, 11px );
-                margin-right: 0px;
-            }
 		}
 
 		&__commodity-block {
                   align-self: flex-end;
                   width: 100%;
-		}
+            }
+            
+            &__img{
+                  position: absolute;
+                  z-index: 1;
+          
+                  top: 50%;
+                  left: 4%;
+          
+                  transform: translate(-50%, -50%);
+              }
 
 		&__commodity-title {
                   font-size: 16px;
@@ -186,33 +280,4 @@
 
                   color: #EFC58B;
 		}
-}
-.nav {
-
-      &__btn {
-            position: relative;
-            top: -3px;
-            padding: 10px 15px;
-            background: transparent;
-            border: none;
-            outline: none;
-
-            @include inline-svg-icon("burger", #FFFFFF, center, 30px );
-
-            cursor: pointer;
-
-           z-index: 1;
-
-            transition: transform 0.3s;
-
-            &:hover{
-                  transition: transform 0.3s;
-                  transform: scale(1.2);
-            }
-
-            &:focus{
-                  transition: transform 0.3s;
-                  transform: scale(1.2);
-            }
-      }
 }

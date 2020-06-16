@@ -21,12 +21,11 @@
     &:last-child{
         margin-right: 0;
     }
-
-		
         
     &__img {
-        height: 100%;
-        
+        display: flex;
+        width: 100%;
+        object-fit: cover;
     }
     
 
