@@ -97,6 +97,8 @@
 }
 .card-block {
     width: 50%;
+    display: flex;
+    align-items: center;
 
     background-image: url('../img/img/s2-kart.png');
     background-size: cover;
@@ -104,4 +106,26 @@
     background-position: center;
 
     height: 604px;
+}
+
+.card-block__info{
+      font-family: "Forum";
+      font-size: 64px;
+      line-height: 71px;
+
+      letter-spacing: 0.03em;
+
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
+
+      color: #FFFFFF;
+}
+
+.card-filter{
+      filter: invert(100%);
+    -ms-filter: invert(100%);
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%)
 }

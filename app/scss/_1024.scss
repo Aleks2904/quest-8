@@ -1,0 +1,86 @@
+@media (min-width:1024px) and (max-width:1200px){
+    /*голова*/
+    .header {
+        &__nav-btn{
+            right: 7%; 
+        }
+    }
+    .logo-block {
+        &__title {
+            font-size: 60px;
+        }
+
+        &__subtitle{
+            font-size: 22px;
+            margin-left: 10%;
+        }
+    
+    }
+    .menu-block{
+        &__img{
+            width: 260px;
+            height: 140px;
+        }
+
+        &__commodity-title {
+            white-space: nowrap;
+        }
+
+        &__commodity-description {
+            white-space: nowrap;
+        }
+    }
+
+    /*карта блок*/
+
+    .info-block{
+        padding: 172px 7%;
+    }
+
+    /*продукт блок*/
+
+    .product-example{
+        &__min-img{
+            &_1{
+                width: 200px;
+                height: 120px;
+            }
+
+            &_2{
+                width: 200px;
+                height: 120px;
+            }
+
+            &_3{
+                width: 210px;
+                height: 210px;
+            }
+
+            &_4{
+                width: 210px;
+                height: 210px;
+            }
+        }
+    }
+
+    /*блок со слайдерам*/
+
+    .social-networks{
+        &__temporarily{
+            padding: 60px;
+        }
+    }
+
+    /*cпам блок*/
+
+    .spam-form {
+        &__form-block {
+            padding: 7% 12.8% 0; 
+        }
+    }
+
+    .footer {
+        grid-template-areas: "list list list list list list"
+                             "logo logo phone phone phone news";
+    }
+}

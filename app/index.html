@@ -10,12 +10,12 @@
     <link rel="manifest" href="img/f-icon/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-<!--
-  <link rel="stylesheet" href="css/all.css">-->
 
+  <link rel="stylesheet" href="css/all.css">
+<!--
     <link rel="stylesheet" href="css/libs/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">-->
 
     <title>HIGH JEWELRY</title>
 </head>
@@ -54,8 +54,7 @@
         </div>
 
         <div class="menu-block">
-
-            <ul class="menu-block__activ-menu-list">
+            <ul class="menu-block__activ-menu-list clearfix">
                 <li class="menu-block__activ-menu-item">
                     <a class="menu-block__activ-menu-link menu-block__activ-menu-link_1"></a>
                 </li>
@@ -64,12 +63,12 @@
                     <a class="menu-block__activ-menu-link menu-block__activ-menu-link_2"></a>
                 </li>
 
-                <li class="menu-block__activ-menu-item">
-                    <a class="menu-block__activ-menu-link menu-block__activ-menu-link_3">
-                        <span class="menu-block__activ-menu-link_number-item">
-                            1
-                        </span>
+                <li class="menu-block__activ-menu-item basket clearfix">
+                    <a id="basket" class="menu-block__activ-menu-link menu-block__activ-menu-link_3">
+                        <span class="menu-block__activ-menu-link_number-item"></span>
                     </a>
+
+                    <ul class="basket-list dn" id="js-basket"></ul>
                 </li>
             </ul>
 
@@ -103,24 +102,6 @@
         <nav id="js-nav" class="nav">
             <div class="nav__block" id="js-nav-header">
                 <img class="nav__logo" src="img/img/logo-black.png" alt="логотип">
-
-                <ul class="nav__activ-menu-list">
-                    <li class="nav__activ-menu-item">
-                        <a class="nav__activ-menu-link nav__activ-menu-link_1"></a>
-                    </li>
-    
-                    <li class="nav__activ-menu-item">
-                        <a class="nav__activ-menu-link nav__activ-menu-link_2"></a>
-                    </li>
-    
-                    <li class="nav__activ-menu-item">
-                        <a class="nav__activ-menu-link nav__activ-menu-link_3">
-                            <span class="nav__activ-menu-link_number-item">
-                                1
-                            </span>
-                        </a>
-                    </li>
-                </ul>
 
                 <ul class="nav__nav-list">
                     <li class="nav__nav-item nav__nav-item_active">
@@ -439,121 +420,123 @@
                 </form>
             </div>
 
-            <div class="card-block"></div>
+            <div id="map" class="card-block"></div>
         </section>
 
         <section class="product-example">
-            <ul class="product-example__list">
-                <li class="product-example__min-block product-example__min-block_1">
+            <ul class="product-example__list" id="js-list-tovar">
+                <li class="js-item product-example__min-block product-example__min-block_1">
                     <picture>
                         <source type="image/webp" srcset="img/img/s3-1.webp">
     
-                        <img class="product-example__min-img product-example__min-img_1" src="img/img/s3-1.png" alt="кольцо">
+                        <img class="product-example__min-img product-example__min-img_1 js-img" src="img/img/s3-1.png" alt="кольцо">
                     </picture>
                     
                     <div class="product-example__min-info-block">
-                        <h2 class="product-example__min-title">
+                        <h2 class="product-example__min-title js-title">
                             КОЛЬЦО jow’s, Cartier
                         </h2>
         
-                        <p class="product-example__min-description">
+                        <p class="product-example__min-description js-description">
                             Белое золото, бриллианты
                         </p>
         
-                        <span class="product-example__min-price">
+                        <span class="product-example__min-price js-prise">
                             674 000 ₽
                         </span>
                     </div>
                 </li>
     
-                <li class="product-example__min-block product-example__min-block_2">
+                <li class="js-item product-example__min-block product-example__min-block_2">
                     <picture>
                         <source type="image/webp" srcset="img/img/s3-2.webp">
     
-                        <img class="product-example__min-img product-example__min-img_2" src="img/img/s3-2.png" alt="кольцо">
+                        <img class="product-example__min-img product-example__min-img_2 js-img" src="img/img/s3-2.png" alt="кольцо">
                     </picture>
     
                     <div class="product-example__min-info-block">
-                        <h2 class="product-example__min-title">
+                        <h2 class="product-example__min-title js-title">
                             КОЛЬЦО croix, Cartier
                         </h2>
         
-                        <p class="product-example__min-description">
+                        <p class="product-example__min-description js-description">
                             Желтое, белое, розовое золото
                         </p>
         
-                        <span class="product-example__min-price">
+                        <span class="product-example__min-price js-prise">
                             432 000 ₽
                         </span>
                     </div>
                 </li>
     
-                <li class="product-example__min-block product-example__min-block_3">
+                <li class="js-item product-example__min-block product-example__min-block_3">
                     <picture>
                         <source type="image/webp" srcset="img/img/s3-3.webp">
     
-                        <img class="product-example__min-img product-example__min-img_3" src="img/img/s3-3.png" alt="странные серьги">
+                        <img class="product-example__min-img product-example__min-img_3 js-img" src="img/img/s3-3.png" alt="странные серьги">
                     </picture>
     
                     <div class="product-example__min-info-block">
-                        <h2 class="product-example__min-title">
+                        <h2 class="product-example__min-title js-title">
                             Серьги moon, HUBLOT
                         </h2>
         
-                        <p class="product-example__min-description">
+                        <p class="product-example__min-description js-description">
                             Желтое золото, сапфир
                         </p>
         
-                        <span class="product-example__min-price">
+                        <span class="product-example__min-price js-prise">
                             498 000 ₽
                         </span>
                     </div>
                 </li>
     
-                <li class="product-example__min-block product-example__min-block_4">
+                <li class="js-item product-example__min-block product-example__min-block_4">
                     <picture>
                         <source type="image/webp" srcset="img/img/s3-4.webp">
     
-                        <img class="product-example__min-img product-example__min-img_4" src="img/img/s3-1.png" alt="серьги">
+                        <img class="product-example__min-img product-example__min-img_4 js-img" src="img/img/s3-4.png" alt="серьги">
                     </picture>
                     
                     <div class="product-example__min-info-block">
-                        <h2 class="product-example__min-title">
+                        <h2 class="product-example__min-title js-title">
                             серьги win, BLANCPAIN
                         </h2>
         
-                        <p class="product-example__min-description">
+                        <p class="product-example__min-description js-description">
                             Желтое золото, жемчуг
                         </p>
         
-                        <span class="product-example__min-price">
+                        <span class="product-example__min-price js-prise">
                             398 000 ₽
                         </span>
                     </div>
                 </li>
     
-                <li class="product-example__big-block">
+                <li class="js-item product-example__big-block">
                     <picture>
                         <source type="image/webp" srcset="img/img/s3-big.webp">
     
-                        <img class="product-example__big-img" src="img/img/s3-big.png" alt="подвеска">
+                        <img class="product-example__big-img js-img" src="img/img/s3-big.png" alt="подвеска">
                     </picture>
     
                     <div class="product-example__big-info-block">
-                        <h2 class="product-example__big-title">
+                        <h2 class="product-example__big-title js-title">
                             КОлье etoile, HUBLOT
                         </h2>
         
-                        <p class="product-example__big-description">
+                        <p class="product-example__big-description js-description">
                             Белое золото, бриллианты
                         </p>
         
-                        <span class="product-example__big-price">
+                        <span class="product-example__big-price js-prise">
                             539 000 ₽
                         </span>
                     </div>
                 </li>
             </ul>
+
+            <div class="modal-window"></div>
         </section>
 
         <section class="social-networks">
@@ -692,6 +675,7 @@
         </div>
     </footer>
 
-    <script src="js/all.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dbb5e8dd-505a-4131-96a2-72154963ac52&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/style.js"></script>
 </body>
 </html>

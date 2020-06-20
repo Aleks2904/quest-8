@@ -15,7 +15,6 @@ var gulp            = require('gulp'), // Подключаем Gulp
     browserSync   = require('browser-sync').create();
 
 const jsFiles = [           //указываем путь к js файлам, первыми указываем библиотеки
-    'libs/jquery/dist/jquery.min.js',
     'app/js/style.js'
 ]
 

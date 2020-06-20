@@ -1,5 +1,8 @@
+
+
 .nav {
-    height: 100vh;
+    min-height: 1024px;
+    height: 100%;
     width: 100%;
 
     position: absolute;
@@ -13,7 +16,9 @@
     background: #272727;
 
     &__block {
-        height: 100vh;
+        position: absolute;
+
+        height: 100%;
         width: 100%;
 
         padding-top: 40px;
@@ -22,7 +27,7 @@
         display: grid;
         grid-template-columns: 11.4% 1fr 1fr 11.4%;
         grid-template-rows: 10% 16% 37% 37%;
-        grid-template-areas:    ". logo activ-menu ."
+        grid-template-areas:    ". logo . ."
                                 "nav-list nav-list nav-list nav-list"
                                 ". minor-block minor-block ." 
                                 ". footer-block footer-block .";
@@ -31,75 +36,6 @@
     &__logo{
         grid-area: logo;
         
-    }
-
-    &__activ-menu-list {
-        grid-area: activ-menu;
-
-        margin-left: 58.6%;
-        margin-top: 3%;
-
-        display: flex;
-        height: 22px;
-    }
-
-    &__activ-menu-item {
-        margin-right: 35px;
-
-        &:nth-child(2){
-            margin-right: 29px;
-        }
-
-        &:nth-child(3){
-            margin-right: 0px;
-        }
-
-        cursor: pointer;
-
-        transition: transform 0.3s;
-
-        &:hover{
-            transform: scale(1.3);
-            transition: transform 0.3s;
-        }
-
-        &:focus{
-            transform: scale(1.3);
-            transition: transform 0.3s;
-        }
-    }
-
-    &__activ-menu-link {
-        position: relative;
-        padding: 12px;
-        background-repeat: no-repeat;
-
-        &_1 {
-            @include inline-svg-icon("heart", #272727, center, 24px);
-        }
-
-        &_2 {
-            @include inline-svg-icon("man", #272727, center, 16px );
-        }
-
-        &_3 {
-            @include inline-svg-icon("bag", #272727, center, 18px );
-        }
-
-        &_number-item {
-            position: absolute;
-
-            top: 50%;
-            left: 120%;
-            transform: translate(-0%, -50%);
-
-            
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 23px;
-
-            color: #FFFFFF;
-        }
     }
 
     &__nav-list {

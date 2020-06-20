@@ -2,6 +2,8 @@
     background: white;
     position: relative;
 
+    overflow-y: auto;
+
     display: flex;
 
     height: 100vh;
@@ -43,11 +45,12 @@
       transform: translate(0%, 0%) !important;
       opacity: 1 !important;  
 
+      overflow-y: auto;
+
       overflow: hidden !important;
   }
 
 .close-btn{
-      top: 55px;
 
       padding: 10px 15px;
       @include inline-svg-icon("close", #FFFFFF, center, 30px );
@@ -152,6 +155,7 @@
             }
       }
 }
+
 .menu-block {
     width: 39.03%;
     padding: 76px 11.25% 60px 9.6%;
@@ -163,11 +167,17 @@
 
 		&__activ-menu-list {
                   display: flex;
-                  height: 22px;
+                  position: absolute;
+                  height: auto;
+
+                  z-index: 5;
             }
             
             &__activ-menu-item{
                   margin-right: 35px;
+                  position: relative;
+
+                  scroll-behavior: smooth;
 
                   &:nth-child(2){
                         margin-right: 29px;
@@ -182,6 +192,8 @@
                   position: relative;
                   padding: 12px;
                   background-repeat: no-repeat;
+
+                  scroll-behavior: smooth;
 
                   &_number-item{
                         position: absolute;

@@ -1,0 +1,245 @@
+.basket {
+   display: block;
+}
+
+.db{
+    display: block;
+
+}
+
+.basket-list{
+    display: none;
+
+    margin-top: 20px;
+    margin-left: -180px;
+
+    border: 1.8px solid wheat;
+    background: #272727;
+
+    padding: 0 15px;
+
+}
+
+.basket-item{
+    width: 300px;
+    padding: 10px 0;
+    position: relative;;
+
+    border-bottom: 1.8px dashed wheat;
+
+    &:last-child{
+        border-bottom: none;
+    }
+
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: 20% 65% 10%;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-areas:  "img title ."
+                          "img discription btn-delit"
+                          "img prise .";
+
+    &__img{
+        grid-area: img;
+
+        position: relative;
+        height: 90%;
+
+        margin-top: 50%;
+        transform: translate(0,-50%);
+    }
+
+    &__title{
+        grid-area: title;
+        white-space:nowrap;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: wheat;
+    }
+
+    &__discription{
+        grid-area: discription;
+        white-space:nowrap;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: white;
+    }
+
+    &__prise{
+        grid-area: prise;
+
+        font-family: "SegoeUI, sans-serif";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+
+        letter-spacing: 0.03em;
+
+        color: #E2B67A;
+    }
+
+    &__btn-delit{
+        grid-area: btn-delit;
+
+        padding: 15px;
+
+        border: none;
+        outline: none;
+        background: transparent;
+
+        position: absolute;
+
+        @include inline-svg-icon("close", red, center, 16px);
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transform: scale(1.2);
+            transition: transform 0.3s;
+        }
+
+        &:focus{
+            transform: scale(1.2);
+            transition: transform 0.3s;
+        }
+    }
+}
+
+.modal-window{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    z-index: 5;
+    
+    opacity: 0;
+
+    transition: transform 1s, opacity 0.5s;
+
+    transform: translate(150%, 150%);
+
+    padding: 25px;
+
+    border: 1.8px solid wheat;
+    border-radius: 15px;
+
+    display: none;
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
+    grid-template-columns: 20% 65% 10%;
+    grid-template-rows: 23% 23% 23% 23%;
+    grid-template-areas:  "img title ."
+                          "img discription ."
+                          "img prise ."
+                          "img  up-basket .";
+
+    background: #272727;
+
+    &__img{
+        grid-area: img;
+
+        position: relative;
+        top: 45%;
+        transform: translate(0, -50%);
+    }  
+
+    &__title{
+        grid-area: title;
+
+        white-space:nowrap;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: wheat;
+    }
+
+    &__discription{
+        grid-area: discription;
+
+        white-space:nowrap;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: white;
+    }
+
+    &__prise{
+        grid-area: prise;
+
+        font-family: "SegoeUI, sans-serif";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+
+        letter-spacing: 0.03em;
+
+        color: #E2B67A;
+    }
+
+    &__up-basket{
+        grid-area: up-basket;
+
+        white-space:nowrap;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 23px;
+
+        color: white;
+
+        scroll-behavior: smooth;
+
+        &::after{
+            margin-left: 15px;
+            content: "";
+            padding: 10px;
+            @include inline-svg-icon("bag", #272727, center, 18px );
+        }
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+            transform: scale(1.3) translate( 7%,0);
+            transition: transform 0.3s;
+        }
+
+        &:focus{
+            transform: scale(1.3) translate( 7%,0);
+            transition: transform 0.3s;
+        }
+
+        
+    }
+}
+
+.modal-window-active{
+    opacity: 1;
+    transition: transform 1s, opacity 0.5s;
+    transform: translate(-50%, -50%);
+}
+
+.modal-window-active2{
+    display: grid;
+}
