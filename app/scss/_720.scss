@@ -30,6 +30,10 @@
     .menu-block{
         padding: 76px 5% 60px 5%;
 
+        &__nav-btn{
+            right: 14.9%;
+        }
+
         &__img{
             width: 200px;
             height: 100px;
@@ -43,6 +47,15 @@
             white-space: nowrap;
         }
     }
+
+    /* покупки в корзине */
+
+    .basket-list{
+        margin-left: -240px;
+
+    }
+
+
     /* гендр блок */
 
     .man-woman-block {
@@ -50,6 +63,217 @@
             &_gender {
                 font-size: 54px;
             }
+        }
+    }
+
+     /* навигация */
+
+     .nav{
+        &__block {
+            position: absolute;
+
+            overflow: auto;
+    
+            height: 100%;
+            width: 100%;
+    
+            padding-top: 40px;
+            padding-bottom: 40px;
+    
+            display: grid;
+            grid-template-columns: 5% 1fr 1fr 5%;
+            grid-template-rows: 10.7% 54% 1fr;
+            grid-template-areas:    ". logo mn nav-btn"
+                                    "nav-list nav-list nav-list nav-list"
+                                    ". footer-block footer-block .";
+        }
+
+        &__nav-list{
+            display: grid;
+            height: 90%;
+            width: 40%;
+            max-width: 300px;
+
+            padding: 27px 5% 0 ;
+        }
+
+        &__nav-item {
+            border: none;
+            position: relative;
+
+            &_active{
+                border: none;
+            }
+
+            &:hover{
+                border: none;
+            }
+    
+            &:focus{
+                border: none;
+            }
+            
+        }
+
+        &__nav-link {
+            white-space: nowrap;
+
+            border-bottom: 1.8px solid transparent;
+
+            padding-bottom: 5px;
+            padding-right: 25px;
+
+            transition: border-color 0.3s;
+
+            &_active{
+                border-bottom: 1.8px solid #FFFFFF;
+                position: relative;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
+            }
+
+            &:hover{
+                border-bottom: 1.8px solid #FFFFFF;
+                transition: border-color 0.3s;
+            }
+
+            &:focus{
+                border-bottom: 1.8px solid #FFFFFF;
+                transition: border-color 0.3s;
+            }
+        }
+
+        &__minor-list{
+            display: none;
+            max-width: 100px;
+
+            flex-wrap: wrap;
+
+            margin-top: 0;
+            top: 0%;
+            right: -80%;
+
+            &_active{
+                display: flex;
+            }
+        }
+
+        &__minor-item {
+            margin-right: 0;
+            width: 100%;
+
+            margin-bottom: 25px;
+
+
+            &_1 {
+                border-bottom: none;
+            }
+    
+            &_2 {
+                border-bottom: none;
+                width: 100%;
+            }
+    
+            &_3 {
+            }
+    
+            &_4 {
+                width: 100%;
+            }
+
+            &:last-child{
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+
+            &:nth-last-child(2){
+                margin-bottom: 25px;
+            }
+        }
+
+        &__minor-link{
+            margin-bottom: 0;
+            padding-bottom: 5px;
+
+            &_active{
+                border-bottom: 1.8px solid #FFFFFF;
+                position: relative;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &__zone-list{
+            display: none;
+            position: absolute;
+
+            right: -180%;
+            top: 0;
+
+            &_active{
+                display: block;
+            }
+        }
+
+        /* футер */
+
+        &__foote-block {
+            grid-area: footer-block;
+    
+            border-top: 1.8px solid #2F2F2F;
+
+            height: 100%;
+    
+            padding-top: 4%;
+            margin-top: 2%;
+    
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__foote-img-block {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__foote-contact-block {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+        
+
+            padding-top: 10%;
         }
     }
 

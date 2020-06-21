@@ -1,9 +1,15 @@
-const btnNav = document.getElementById('js-btn-nav');
+const btnNavBurger = document.getElementById('js-btn-nav-burger');
+const btnNavClose = document.getElementById('js-btn-nav-close');
 
-btnNav.onclick = function(){
-    document.getElementById('js-nav').classList.toggle('activ');
-    btnNav.classList.toggle('close-btn');
-    document.querySelector('body').classList.toggle('overflow');
+btnNavBurger.onclick = function(){
+    document.getElementById('js-nav').classList.add('activ');
+    window.scrollTo(0, 0);
+    document.querySelector('body').classList.add('overflow');
+};
+
+btnNavClose.onclick = function(){
+    document.getElementById('js-nav').classList.remove('activ');
+    document.querySelector('body').classList.remove('overflow');
 };
 
 var item = document.querySelector(".product-example__list");

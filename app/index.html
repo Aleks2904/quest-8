@@ -54,7 +54,7 @@
         </div>
 
         <div class="menu-block">
-            <ul class="menu-block__activ-menu-list clearfix">
+            <ul id="js-activ-menu-list" class="menu-block__activ-menu-list clearfix">
                 <li class="menu-block__activ-menu-item">
                     <a class="menu-block__activ-menu-link menu-block__activ-menu-link_1"></a>
                 </li>
@@ -71,6 +71,8 @@
                     <ul class="basket-list dn" id="js-basket"></ul>
                 </li>
             </ul>
+
+            <button id="js-btn-nav-burger" class="menu-block__nav-btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header"></button>
 
             <a class="menu-block__commodity-block">
                 <picture>
@@ -94,20 +96,207 @@
             </a>
         </div>
 
-        <button id="js-btn-nav" class="header__nav-btn" aria-label="отркыть меню" aria-expanded="false" aria-controls="js-nav-header">
-            <span class="header__nav-btn-burger activ"></span>
-            <span class="header__nav-btn-close"></span>
-        </button>
-
         <nav id="js-nav" class="nav">
             <div class="nav__block" id="js-nav-header">
                 <img class="nav__logo" src="img/img/logo-black.png" alt="логотип">
 
+                <ul class="nav__activ-menu-list clearfix">
+                    <li class="nav__activ-menu-item">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_1"></a>
+                    </li>
+    
+                    <li class="nav__activ-menu-item">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_2"></a>
+                    </li>
+    
+                    <li class="nav__activ-menu-item basket clearfix">
+                        <a class="nav__activ-menu-link nav__activ-menu-link_3">
+                            <span class="nav__activ-menu-link_number-item"></span>
+                        </a>
+    
+                        <ul class="basket-list dn"></ul>
+                    </li>
+                </ul>
+
+                <button id="js-btn-nav-close" class="nav__nav-btn" aria-label="зыкрть меню" aria-expanded="true" aria-controls="js-nav-header"></button>
+
                 <ul class="nav__nav-list">
                     <li class="nav__nav-item nav__nav-item_active">
-                        <a class="nav__nav-link">
+                        <a class="nav__nav-link nav__nav-link_active">
                             Ювелирные изделия
                         </a>
+
+                        <ul class="nav__minor-list nav__minor-list_1 nav__minor-list_active">
+                            <li class="nav__minor-item nav__minor-item_back">
+                                <a class="nav__minor-link nav__minor-link_back">
+                                    Назад
+                                </a>
+                            </li>
+                            
+                            <li class="nav__minor-item nav__minor-item_1">
+                                <a class="nav__minor-link nav__minor-link_active">
+                                    для кого
+                                </a>
+
+                                <ul class="nav__zone-list nav__zone-list_active">
+                                    <li class="nav__zone-item nav__zone-item_back">
+                                        <a class="nav__zone-link nav__zone-link_back">
+                                            Назад
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Для женщин
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Для мужчин
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Для детей
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav__minor-item nav__minor-item_2">
+                                <a class="nav__minor-link">
+                                    Категории
+                                </a>
+
+                                <ul class="nav__zone-list nav__zone-list">
+                                    <li class="nav__zone-item nav__zone-item_back">
+                                        <a class="nav__zone-link nav__zone-link_back">
+                                            Назад
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Кольца
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Браслеты
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Колье
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Серьги
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Броши
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav__minor-item nav__minor-item_3">
+                                <a class="nav__minor-link">
+                                    материал
+                                </a>
+
+                                <ul class="nav__zone-list nav__zone-list">
+                                    <li class="nav__zone-item nav__zone-item_back">
+                                        <a class="nav__zone-link nav__zone-link_back">
+                                            Назад
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Изделия <br>с бриллиантами
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Желтое золото
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Белое золото
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Розовое золото
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav__minor-item nav__minor-item_4">
+                                <a class="nav__minor-link">
+                                    бренд
+                                </a>
+
+                                <ul class="nav__zone-list nav__zone-list">
+                                    <li class="nav__zone-item nav__zone-item_back">
+                                        <a class="nav__zone-link nav__zone-link_back">
+                                            Назад
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Mercury
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Chopard
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Cartier
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Graff
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link">
+                                            Garrard
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__zone-item">
+                                        <a class="nav__zone-link nav__zone-link_all-brend">
+                                            Показать все бренды
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="nav__nav-item">
@@ -146,148 +335,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <div class="nav__minor-block">
-                    <ul class="nav__minor-list">
-                        <li class="nav__minor-item nav__minor-item_title">
-                            <h2 class="nav__minor-link nav__minor-link_title">
-                                для кого
-                            </h2>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Для женщин
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Для мужчин
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Для детей
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav__minor-list">
-                        <li class="nav__minor-item nav__minor-item_title">
-                            <h2 class="nav__minor-link nav__minor-link_title">
-                                Категории
-                            </h2>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Кольца
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Браслеты
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Колье
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Серьги
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Броши
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav__minor-list">
-                        <li class="nav__minor-item nav__minor-item_title">
-                            <h2 class="nav__minor-link nav__minor-link_title">
-                                материал
-                            </h2>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Изделия <br> с бриллиантами
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Желтое золото
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Белое золото
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Розовое золото
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav__minor-list">
-                        <li class="nav__minor-item nav__minor-item_title">
-                            <h2 class="nav__minor-link nav__minor-link_title">
-                                бренд
-                            </h2>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Mercury
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Chopard
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Cartier
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Graff
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item">
-                            <a class="nav__minor-link">
-                                Garrard
-                            </a>
-                        </li>
-
-                        <li class="nav__minor-item nav__minor-item_all-brend">
-                            <a class="nav__minor-link nav__minor-link_all-brend">
-                                Показать все бренды
-                            </a>
-                        </li>
-                    </ul>
-                </div>
 
                 <div class="nav__foote-block">
                     <div class="nav__foote-img-block">

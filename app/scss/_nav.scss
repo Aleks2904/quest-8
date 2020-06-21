@@ -1,12 +1,9 @@
-
-
 .nav {
-    min-height: 1024px;
-    height: 100%;
     width: 100%;
+    height: 100%;
 
     position: absolute;
-    z-index: 2;
+    z-index: 7;
 
     transform: translate(-101%, -101%);
     opacity: 0;
@@ -18,7 +15,7 @@
     &__block {
         position: absolute;
 
-        height: 100%;
+        height: 100vh;
         width: 100%;
 
         padding-top: 40px;
@@ -26,17 +23,121 @@
 
         display: grid;
         grid-template-columns: 11.4% 1fr 1fr 11.4%;
-        grid-template-rows: 10% 16% 37% 37%;
-        grid-template-areas:    ". logo . ."
+        grid-template-rows: 10.7% 54% 1fr;
+        grid-template-areas:    ". logo mn nav-btn"
                                 "nav-list nav-list nav-list nav-list"
-                                ". minor-block minor-block ." 
                                 ". footer-block footer-block .";
     }
 
     &__logo{
         grid-area: logo;
-        
     }
+
+    &__activ-menu-list {
+        display: flex;
+        height: auto;
+
+        z-index: 5;
+
+        grid-area: mn;
+        position: absolute;
+        right: 16.7%;
+        top: 18%;
+    }
+  
+    &__activ-menu-item{
+        margin-right: 35px;
+        position: relative;
+
+        scroll-behavior: smooth;
+
+        &:nth-child(2){
+              margin-right: 29px;
+        }
+
+        &:nth-child(3){
+              margin-right: 0px;
+        }
+    }
+
+    &__activ-menu-link {
+        position: relative;
+        padding: 12px;
+        background-repeat: no-repeat;
+
+        scroll-behavior: smooth;
+
+        &_number-item{
+              position: absolute;
+
+              top: 50%;
+              left: 120%;
+              transform: translate(-0%, -50%);
+
+              
+              font-weight: 300;
+              font-size: 18px;
+              line-height: 23px;
+
+              color: #FFFFFF;
+        }
+
+        &_1{
+              @include inline-svg-icon("heart", #272727, center, 24px);
+        }
+
+        &_2{
+              @include inline-svg-icon("man", #272727, center, 16px );
+        }
+
+        &_3{
+              @include inline-svg-icon("bag", #272727, center, 18px );
+        }
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+              transition: transform 0.3s;
+              transform: scale(1.2);
+        }
+
+        &:focus{
+              transition: transform 0.3s;
+              transform: scale(1.2);
+        }
+
+  }
+
+    &__nav-btn{
+        grid-area: nav-btn;
+
+        position: absolute;
+        top:15px;
+        left: -20px;
+        padding: 10px 15px;
+        background: transparent;
+        border: none;
+        outline: none;
+
+        padding: 10px 15px;
+        @include inline-svg-icon("close", #FFFFFF, center, 30px );
+
+        cursor: pointer;
+
+        transition: transform 0.3s;
+
+        &:hover{
+              transition: transform 0.3s;
+              transform: scale(1.2);
+        }
+
+        &:focus{
+              transition: transform 0.3s;
+              transform: scale(1.2);
+        }
+  }
 
     &__nav-list {
         grid-area: nav-list;
@@ -86,71 +187,76 @@
         color: #FFFFFF;
     }
 
-    &__minor-block {
-        grid-area: minor-block;
-
-        border-bottom: 1.8px solid #2F2F2F;
-
-        margin-top: 0;
-
-        padding-right: 28.7%;
-
-        display: flex;
-        justify-content: space-between;
-    }
+    /* подраздел */
 
     &__minor-list {
-        margin-bottom: 30px;
+        margin-top: 95px;
 
-        &:nth-child(1){
-            margin-bottom: 30px;
-        }
+        position: absolute;
 
-        &:last-child{
-            margin-bottom: 0;
+        display: flex;
+
+        &_1 {
         }
     }
 
     &__minor-item {
-        margin-bottom: 15px;
+        margin-right: 101px;
 
-        cursor: pointer;
-
-        transition: transform 0.3s;
-
-        &:hover{
-            transform: scale(1.1) translate(3%, 0);
-            transition: transform 0.3s;
+        &_back{
+            display: none;
         }
 
-        &:focus{
-            transform: scale(1.1) translate(3%, 0);
-            transition: transform 0.3s;
+        &_1 {
+        }
+
+        &_2 {
+        }
+
+        &_3 {
+        }
+
+        &_4 {
+    
         }
 
         &:last-child{
-            margin-bottom: 0;
-        }
-
-        &_title {
-            margin-bottom: 30px;
-
-            &:hover{
-                transform: scale(1) translate(0%, 0);
-                transition: transform 0s;
-            }
-
-            &:focus{
-                transform: scale(1) translate(0%, 0);
-                transition: transform 0s;
-            }
-        }
-
-        &_all-brend {
+            margin-right: 0;
         }
     }
 
     &__minor-link {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+
+        cursor: default;
+
+        color: #FFFFFF;
+
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    &__zone-list {
+
+        &_active {
+        }
+    }
+
+    &__zone-item {
+        margin-bottom: 15px;
+
+        &_back{
+            display: none;
+        }
+    }
+
+    &__zone-link {
         font-weight: 400;
         font-size: 18px;
         line-height: 23px;
@@ -158,20 +264,6 @@
         letter-spacing: 0.06em;
 
         color: #FFFFFF;
-
-        &_title{
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 21px;
-
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-
-            cursor: default;
-
-            color: #FFFFFF;
-        }
 
         &_all-brend {
             font-family: "SegoeUI, sans-serif";
@@ -184,11 +276,16 @@
         }
     }
 
+    /* футер */
+
     &__foote-block {
         grid-area: footer-block;
 
+        border-top: 1.8px solid #2F2F2F;
+
+        padding-top: 6.2%;
+
         display: flex;
-        align-self: end;
     }
 
     &__foote-img-block {
@@ -233,8 +330,10 @@
         position: absolute;
         z-index: 2;
 
-        top: 50%;
-        left: 50%;
+        white-space: nowrap;
+
+        top: 49.5%;
+        left: 50.2%;
 
         transform: translate(-50%, -50%);
 
@@ -252,8 +351,8 @@
         position: absolute;
         z-index: 2;
 
-        bottom: 30px;
-        right: 30px;
+        bottom: 34px;
+        right: 28px;
 
         padding-right: 53px;
 
@@ -292,10 +391,11 @@
     }
 
     &__foote-contact-block {
+
     }
 
     &__block-phone {
-        margin-bottom: 40px;
+        margin-bottom: 45px;
     }
 
     &__title-phone {

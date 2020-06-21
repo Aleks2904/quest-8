@@ -35,6 +35,11 @@
     .menu-block{
         padding: 76px 5% 60px 5%;
 
+        &__nav-btn{
+            right: 20%;
+            top:30px;
+        }
+
         &__img{
             width: 180px;
             height: 100px;
@@ -53,7 +58,297 @@
             font-size: 16px;
         }
     }
+
+     /* покупки в корзине */
+
+     .basket-list{
+        margin-left: -280px;
+
+    }
+
+    /* навигация */
+    .nav{
+        &__block {
+            position: absolute;
+
+            overflow: auto;
+    
+            height: 100%;
+            width: 100%;
+    
+            padding-top: 40px;
+            padding-bottom: 40px;
+    
+            display: grid;
+            grid-template-columns: 5% 1fr 1fr 5%;
+            grid-template-rows: 10.7% 54% 1fr;
+            grid-template-areas:    ". logo mn nav-btn"
+                                    "nav-list nav-list nav-list nav-list"
+                                    ". footer-block footer-block .";
+        }
+
+        &__nav-list{
+            display: grid;
+            height: 90%;
+            width: 50%;
+            max-width: 300px;
+
+            padding: 27px 5% 0 ;
+        }
+
+        &__nav-item {
+            border: none;
+            position: relative;
+
+            &_active{
+                border: none;
+            }
+
+            &:hover{
+                border: none;
+            }
+    
+            &:focus{
+                border: none;
+            }
+            
+        }
+
+        .nav-link-dn{
+            display: none;
+        }
+
+        &__nav-link {
+            white-space: nowrap;
+
+            display: none;
+
+            border-bottom: 1.8px solid transparent;
+
+            padding-bottom: 5px;
+            padding-right: 25px;
+
+            transition: border-color 0.3s;
+
+            &_active{
+                border-bottom: none;
+                position: relative;
+
+                &::after{
+                    content: none;
+
+                    padding: 0px;
+                }
+            }
+
+            &:hover{
+                border-bottom: 1.8px solid #FFFFFF;
+                transition: border-color 0.3s;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
+            }
+
+            &:focus{
+                border-bottom: 1.8px solid #FFFFFF;
+                transition: border-color 0.3s;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &__minor-list{
+            display: none;
+            max-width: 150px;
+
+            flex-wrap: wrap;
+
+            margin-top: 0;
+            top: 0%;
+            left: 0;
+
+            &_active{
+                display: flex;
+            }
+        }
+
+        &__minor-item {
+            margin-right: 0;
+            width: 100%;
+
+            margin-bottom: 25px;
+
+            &_back{
+                display: block;
+            }
+
+
+            &_1 {
+                border-bottom: none;
+            }
+    
+            &_2 {
+                border-bottom: none;
+                width: 100%;
+            }
+    
+            &_3 {
+            }
+    
+            &_4 {
+                width: 100%;
+            }
+
+            &:last-child{
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+
+            &:nth-last-child(2){
+                margin-bottom: 25px;
+            }
+        }
+
+        &__minor-link{
+            font-size: 20px;
+            white-space: nowrap;
+
+            margin-bottom: 0;
+            padding-bottom: 5px;
+
+            &_back{
+                font-style: italic;
+
+                padding-left: 25px;
+
+                position: relative;
+
+                &::before{
+                    content: "";
+
+                    position: absolute;
+                    left: -5px;
+                    top: -3px;
+
+                    padding: 15px;
+
+                
+                    @include inline-svg-icon("arrow", white, top, 15px);
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(-90deg);
+                }
+            }
+
+
+            &_active{
+                border-bottom: none;
+            }
+        }
+
+        &__zone-list{
+            display: none;
+            position: absolute;
+
+            right: -280%;
+            top: 0;
+
+            &_active{
+                display: block;
+            }
+        }
+
+        &__zone-item{
+            margin-bottom: 25px;
+
+            &:last-child{
+                bottom: 0;
+            }
+        }
+
+        &__zone-link{
+            font-size: 23px;
+        }
+
+        /* футер-нав */
+
+        &__foote-block {
+            grid-area: footer-block;
+    
+            border-top: 1.8px solid #2F2F2F;
+
+            height: 100%;
+    
+            padding-top: 4%;
+            margin-top: 2%;
+    
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__foote-img-block {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__foote-img-description {
+            top: 15px;
+            left: 30px;
+        }
+
+        &__foote-img-title {
+            font-size: 40px;
+            line-height: 53px;
+
+        }
+
+        &__foote-img-link {
+            bottom: 15px;
+        }
+
+        &__foote-contact-block {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+        
+
+            padding-top: 10%;
+        }
+    }
+
     /* гендр блок */
+
     .section-man-woman {
         display: grid;
         grid-row-gap: 20px;
