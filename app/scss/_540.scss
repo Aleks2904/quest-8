@@ -1,4 +1,4 @@
-@media (min-width:540px) and (max-width:720px){
+@media (min-width:540px) and (max-width:710px){
     /*голова*/
     .header {
         &__nav-btn{
@@ -114,14 +114,10 @@
             
         }
 
-        .nav-link-dn{
-            display: none;
-        }
-
         &__nav-link {
             white-space: nowrap;
 
-            display: none;
+            display: inline-block;
 
             border-bottom: 1.8px solid transparent;
 
@@ -136,8 +132,6 @@
 
                 &::after{
                     content: none;
-
-                    padding: 0px;
                 }
             }
 
@@ -188,13 +182,19 @@
 
         &__minor-list{
             display: none;
-            max-width: 150px;
+            max-width: 300px;
+            
+            padding: 10px 5px 170px;
 
             flex-wrap: wrap;
 
             margin-top: 0;
-            top: 0%;
-            left: 0;
+            top: -25%;
+            left: -2%;
+
+            z-index: 5;
+            //background: red;
+            background: #2F2F2F;
 
             &_active{
                 display: flex;
@@ -272,15 +272,39 @@
 
 
             &_active{
-                border-bottom: none;
+                border-bottom: 1.8px solid #FFFFFF;
+                position: relative;
+
+                display: inline-block;
+
+                padding-right: 25px;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
             }
         }
 
         &__zone-list{
             display: none;
             position: absolute;
+            max-width: 240px;
+            width: 100%;
 
-            right: -280%;
+            right: -130%;
             top: 0;
 
             &_active{
@@ -297,7 +321,11 @@
         }
 
         &__zone-link{
-            font-size: 23px;
+            font-size: 22px;
+
+            &_all-brend{
+                font-size: 18px;
+            }
         }
 
         /* футер-нав */
@@ -350,6 +378,8 @@
     /* гендр блок */
 
     .section-man-woman {
+        width: 100% !important;
+        max-width: 722px;
         display: grid;
         grid-row-gap: 20px;
         justify-content: space-between;
@@ -359,7 +389,8 @@
     }
 
     .man-woman-block {
-        width: 100%;
+        width: 100% !important;
+        margin-right: 0;
 
         background: white;
         &__title {

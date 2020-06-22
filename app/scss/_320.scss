@@ -41,8 +41,12 @@
         padding: 50px 5% 25%;
 
         &__nav-btn{
-            right:30%;
-            top: 50px;
+            right:10%;
+            top: -77.5%;
+
+            z-index: 2;
+
+            @include inline-svg-icon("burger", #272727 #272727, center, 30px );
         }
 
         &__img{
@@ -165,14 +169,10 @@
             
         }
 
-        .nav-link-dn{
-            display: none;
-        }
-
         &__nav-link {
             white-space: nowrap;
 
-            display: none;
+            display: inline-block;
 
             border-bottom: 1.8px solid transparent;
 
@@ -239,13 +239,19 @@
 
         &__minor-list{
             display: none;
-            max-width: 150px;
+            max-width: 300px;
+            
+            padding: 10px 5px 170px 25px;
 
             flex-wrap: wrap;
 
             margin-top: 0;
-            top: 0%;
-            left: 0;
+            top: -25%;
+            left: -2%;
+
+            z-index: 5;
+            //background: red;
+            background: #2F2F2F;
 
             &_active{
                 display: flex;
@@ -257,6 +263,10 @@
             width: 100%;
 
             margin-bottom: 25px;
+
+            &_back{
+                display: block;
+            }
 
 
             &_1 {
@@ -285,23 +295,18 @@
             }
         }
 
-        .nav-minor-link{
-            display: none;
-        }
-
         &__minor-link{
             font-size: 20px;
             white-space: nowrap;
 
-            display: none;
-
             margin-bottom: 0;
-            padding-left: 25px;
             padding-bottom: 5px;
 
+            &_back{
+                font-style: italic;
 
-            &_active{
-                border-bottom: none;
+                padding-left: 25px;
+
                 position: relative;
 
                 &::before{
@@ -321,24 +326,65 @@
                     transform: rotate(-90deg);
                 }
             }
+
+
+            &_active{
+                border-bottom: 1.8px solid #FFFFFF;
+                position: relative;
+
+                display: inline-block;
+
+                padding-right: 25px;
+
+                &::after{
+                    content: "";
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    padding: 10px;
+                
+                    @include inline-svg-icon("arrow", #DADADA, center, 10px);
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    display: block;
+                    transform: rotate(90deg);
+                }
+            }
         }
 
         &__zone-list{
             display: none;
-            position:relative;
+            max-width: 300px;
+            max-height: 440px;
+            
+            padding: 10px 5px 170px 25px;
 
-            width: 100%;
+            flex-wrap: wrap;
 
-            right: 0%;
-            top: -4px;
+            margin-top: 0;
+            position: absolute;
+            top: 0%;
+            left: -2%;
+
+            z-index: 6;
+            background: #2F2F2F;
 
             &_active{
-                display: block;
+                display: flex;
             }
         }
 
         &__zone-item{
             margin-bottom: 25px;
+
+            width: 100%;
+
+            position: relative;
+
+            display: block;
 
             &_back{
                 display: block;
@@ -348,6 +394,10 @@
         &__zone-link {
             font-size: 25px;
             width: 100%;
+
+            position: relative;
+
+            display: block;
 
             white-space: nowrap;
 
@@ -363,7 +413,7 @@
 
                     position: absolute;
                     left: -25px;
-                    top: 3px;
+                    top: -4px;
 
                     padding: 15px;
 
@@ -537,6 +587,35 @@
 
                 height: 100%;
             }
+        }
+
+        &__min-title{
+            font-size: 22px;
+            font-weight: 450;
+            line-height: 21px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: black;
+            margin-bottom: 9px;
+        }
+
+
+        &__min-description{
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 23px;
+            color: #272727;
+            margin-bottom: 9px;
+        }
+
+        &__min-price{
+            font-family: "SegoeUI, sans-serif";
+            font-style: italic;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 24px;
+            letter-spacing: .03em;
+            color: #e2b67a;
         }
     }
 

@@ -1,4 +1,4 @@
-@media (min-width:720px) and (max-width:1024px){
+@media (min-width:710px) and (max-width:1024px){
     /*голова*/
     .header {
         &__nav-btn{
@@ -160,7 +160,7 @@
 
         &__minor-list{
             display: none;
-            max-width: 100px;
+            max-width: 120px;
 
             flex-wrap: wrap;
 
@@ -175,10 +175,8 @@
 
         &__minor-item {
             margin-right: 0;
-            width: 100%;
 
             margin-bottom: 25px;
-
 
             &_1 {
                 border-bottom: none;
@@ -214,6 +212,10 @@
                 border-bottom: 1.8px solid #FFFFFF;
                 position: relative;
 
+                display: inline-block;
+
+                padding-right: 25px;
+
                 &::after{
                     content: "";
 
@@ -237,7 +239,9 @@
             display: none;
             position: absolute;
 
-            right: -180%;
+            width: 200px;
+
+            right: -240%;
             top: 0;
 
             &_active{

@@ -5,6 +5,12 @@ btnNavBurger.onclick = function(){
     document.getElementById('js-nav').classList.add('activ');
     window.scrollTo(0, 0);
     document.querySelector('body').classList.add('overflow');
+
+    var width = screen.width;
+
+    if(width <= 1200 ){
+        delitActive()
+    }
 };
 
 btnNavClose.onclick = function(){
@@ -35,9 +41,9 @@ basketP.onmouseover = function(e){
 item.addEventListener("click", function(e){
     if(e.target.querySelectorAll("li")){
         var img = e.target.parentNode.parentNode.querySelector('.js-img').getAttribute('src');
-    var title = e.target.parentNode.parentNode.querySelector('.js-title').textContent;
-    var discription = e.target.parentNode.parentNode.querySelector('.js-description').textContent;
-    var prise = e.target.parentNode.parentNode.querySelector('.js-prise').textContent;
+        var title = e.target.parentNode.parentNode.querySelector('.js-title').textContent;
+        var discription = e.target.parentNode.parentNode.querySelector('.js-description').textContent;
+        var prise = e.target.parentNode.parentNode.querySelector('.js-prise').textContent;
 
     if(modalWindow.classList == "modal-window modal-window-active2 modal-window-active"){
         return false;
@@ -159,167 +165,300 @@ var btnKart = document.querySelector('.info-block__btn'),
     inputKart = document.querySelector('.info-block__input'),
     form = document.querySelector('.info-block__form');
     karta = document.querySelector('.card-block');
-    var centr;
+var centr;
 
-    form.addEventListener("submit", function(e){
-        event.preventDefault();
+form.addEventListener("submit", function(e){
+    event.preventDefault();
+    
+    var city = inputKart.value
+    city = city.toUpperCase()
+    
+    if (document.querySelector('.ymaps-2-1-76-map')){
+        document.querySelector('.ymaps-2-1-76-map').remove();
+    }
+
+    if ( city == 'МОСКВА' || city == 'MOSCOW'){
+        centr = [55.75582147080667,37.61453289814758]
+        karta.classList.add('card-filter');
+        karta.innerHTML =``
+    }else if ( city == 'СПБ' || city == 'SBP' || city == 'САНКТ-ПЕТЕРБУРГ' || city == 'SAINT PETERSBURG'){
+        centr = [59.9359909931084,30.315972044982914]
+        karta.classList.add('card-filter');
+        karta.innerHTML =``
+    }else if (city == 'САМАРА'|| city == 'SAMARA'){
+        centr = [53.207543160978794,50.201089464309675]
+        karta.classList.add('card-filter');
+        karta.innerHTML =``
+    }else if (city == 'КАЗАНЬ'|| city == 'KAZAN'){
+        centr = [55.82925751488102,49.11989491799918]
+        karta.classList.add('card-filter');
+        karta.innerHTML =``
+    }
+    else if (city == 'КАЛИНИНГРАД'|| city == 'KALININGRAD'){
+        centr = [54.71802672628874,20.499932567459105]
+        karta.classList.add('card-filter');
+        karta.innerHTML =``
+    }else{
+        karta.innerHTML =`<p class="card-block__info">Извините, в вашем городе нет магазина </p>`
+        karta.classList.remove('card-filter');
+        this.reset();
+        return
+    }
+
+    console.log(centr)
+
+    this.reset();
+
+    ymaps.ready(function () {
+        debugger
+
+        var myMap = new ymaps.Map('map', {
+            center: centr,
+            zoom: 16,
+            controls: []
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
         
-        var city = inputKart.value
-        city = city.toUpperCase()
-       
-        if (document.querySelector('.ymaps-2-1-76-map')){
-            document.querySelector('.ymaps-2-1-76-map').remove();
+    
+        var Moscow = new ymaps.Placemark(myMap.getCenter([55.75582147080667,37.61453289814758]), {
+                hintContent: 'Москва',
+                balloonContent: 'наш магазин в Москве',
+            }),
+    
+            SPB = new ymaps.Placemark([59.9359909931084,30.315972044982914], {
+                hintContent: 'СПБ',
+                balloonContent: 'наш магазин в Санкт-Петербурге',
+            }),
+    
+            Samara = new ymaps.Placemark([53.207543160978794,50.201089464309675], {
+                hintContent: 'Самара',
+                balloonContent: 'наш магазин в Самаре',
+            }),
+    
+            Kazan = new ymaps.Placemark([55.82925751488102,49.11989491799918], {
+                hintContent: 'Казань',
+                balloonContent: 'наш магазин в Казане',
+            }),
+    
+            Kaliningrad = new ymaps.Placemark([54.71802672628874,20.499932567459105], {
+                hintContent: 'Калиненград',
+                balloonContent: 'наш магазин в Калиненграде',
+            });
+    
+        myMap.geoObjects
+            .add(Moscow)
+            .add(SPB)
+            .add(Samara)
+            .add(Kazan)
+            .add(Kaliningrad);
+                
+    });
+})
+
+
+/* навигация */
+
+function delitActive(){
+    for (var i = 0; i < navList1.childNodes.length; i++) {
+        if (navList1.childNodes[i].classList == "nav__nav-item nav__nav-item_active") {
+            navList1.childNodes[i].classList.remove('nav__nav-item_active');
         }
 
-        if ( city == 'МОСКВА' || city == 'MOSCOW'){
-            centr = [55.75582147080667,37.61453289814758]
-            karta.classList.add('card-filter');
-            karta.innerHTML =``
-        }else if ( city == 'СПБ' || city == 'SBP' || city == 'САНКТ-ПЕТЕРБУРГ' || city == 'SAINT PETERSBURG'){
-            centr = [59.9359909931084,30.315972044982914]
-            karta.classList.add('card-filter');
-            karta.innerHTML =``
-        }else if (city == 'САМАРА'|| city == 'SAMARA'){
-            centr = [53.207543160978794,50.201089464309675]
-            karta.classList.add('card-filter');
-            karta.innerHTML =``
-        }else if (city == 'КАЗАНЬ'|| city == 'KAZAN'){
-            centr = [55.82925751488102,49.11989491799918]
-            karta.classList.add('card-filter');
-            karta.innerHTML =``
+        for ( var k = 0; k < navList1.childNodes[i].childNodes.length; k++){
+            if (navList1.childNodes[i].childNodes[k].classList == "nav__nav-link nav__nav-link_active"){
+                navList1.childNodes[i].childNodes[k].classList.remove('nav__nav-link_active');
+            }
+
+            if(navList1.childNodes[i].childNodes[k].classList == "nav__minor-list nav__minor-list_active"){
+               navList1.childNodes[i].childNodes[k].classList.remove('nav__minor-list_active');
+            }
+
+            for (var j = 0; j < navList1.childNodes[i].childNodes[k].childNodes.length; j++){
+
+                for(var q = 0; q < navList1.childNodes[i].childNodes[k].childNodes[j].childNodes.length; q++){
+                    if (navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList == "nav__minor-link nav__minor-link_active"){
+                        navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList.remove('nav__minor-link_active');
+                    }
+
+                    if  (navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList == "nav__zone-list nav__zone-list_active"){
+                        navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList.remove('nav__zone-list_active');
+                    }
+                }
+            }
         }
-        else if (city == 'КАЛИНИНГРАД'|| city == 'KALININGRAD'){
-            centr = [54.71802672628874,20.499932567459105]
-            karta.classList.add('card-filter');
-            karta.innerHTML =``
-        }else{
-            karta.innerHTML =`<p class="card-block__info">Извините, в вашем городе нет магазина </p>`
-            karta.classList.remove('card-filter');
-            this.reset();
+    }
+}
+
+function delitActive_50p(){
+    for (var i = 0; i < navList1.childNodes.length; i++) {
+        for ( var k = 0; k < navList1.childNodes[i].childNodes.length; k++){
+
+            for (var j = 0; j < navList1.childNodes[i].childNodes[k].childNodes.length; j++){
+
+                for(var q = 0; q < navList1.childNodes[i].childNodes[k].childNodes[j].childNodes.length; q++){
+                    if (navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList == "nav__minor-link nav__minor-link_active"){
+                        navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList.remove('nav__minor-link_active');
+                    }
+
+                    if  (navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList == "nav__zone-list nav__zone-list_active"){
+                        navList1.childNodes[i].childNodes[k].childNodes[j].childNodes[q].classList.remove('nav__zone-list_active');
+                    }
+                }
+            }
+        }
+    }
+}
+
+var navList1 = document.querySelector('.nav__nav-list');
+
+/*
+    navItem1 = document.querySelector('.nav__nav-item'),
+    navLink1 = document.querySelector('.nav__nav-link'),
+    nav2 = document.querySelector('.nav__minor-list'),
+    navList3 = document.querySelector('.nav__zone-list'),
+    navItem3 = document.querySelector('.nav__zone-item'),
+    test = document.querySelector('.nav__block').getElementsByClassName('nav__zone-item');*/
+
+
+    window.addEventListener(`resize`, event => {
+        if(screen.width <= 1200 ){
+            delitActive()
+        }
+        if(screen.width > 1200 ){
+            delitActive()
+        }
+      }, false);
+
+
+
+    navList1.addEventListener('click', function(e){
+        var width = screen.width;
+
+        if(width > 1200){
             return
         }
 
-        console.log(centr)
-
-        this.reset();
-
-        ymaps.ready(function () {
-            debugger
-
-            var myMap = new ymaps.Map('map', {
-                center: centr,
-                zoom: 16,
-                controls: []
-            }, {
-                searchControlProvider: 'yandex#search'
-            });
-            
-        
-            var Moscow = new ymaps.Placemark(myMap.getCenter([55.75582147080667,37.61453289814758]), {
-                    hintContent: 'Москва',
-                    balloonContent: 'наш магазин в Москве',
-        
-                    //center:[55.75582147080667,37.61453289814758]
-                })/*,{
-                    iconLayout: 'default#image',
-                    iconImageHref: '../img/img/mark.png',
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-5, -38]
-                })*/,
-        
-                SPB = new ymaps.Placemark([59.9359909931084,30.315972044982914], {
-                    hintContent: 'СПБ',
-                    balloonContent: 'наш магазин в Санкт-Петербурге',
-                    //center:[59.9359909931084,30.315972044982914]
-                })/*,{
-                    iconLayout: 'default#image',
-                    iconImageHref: '../img/img/mark.png',
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-5, -38],
-
-                })*/,
-        
-                Samara = new ymaps.Placemark([53.207543160978794,50.201089464309675], {
-                    hintContent: 'Самара',
-                    balloonContent: 'наш магазин в Самаре',
-                })/*,{
-                    iconLayout: 'default#image',
-                    iconImageHref: '../img/img/mark.png',
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-5, -38]
-                })*/,
-        
-                Kazan = new ymaps.Placemark([55.82925751488102,49.11989491799918], {
-                    hintContent: 'Казань',
-                    balloonContent: 'наш магазин в Казане',
-                })/*,{
-                    iconLayout: 'default#image',
-                    iconImageHref: '../img/img/mark.png',
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-5, -38]
-                })*/,
-        
-                Kaliningrad = new ymaps.Placemark([54.71802672628874,20.499932567459105], {
-                    hintContent: 'Калиненград',
-                    balloonContent: 'наш магазин в Калиненграде',
-                })/*,{
-                    iconLayout: 'default#image',
-                    iconImageHref: '../img/img/mark.png',
-                    iconImageSize: [30, 42],
-                    iconImageOffset: [-5, -38]
-                })*/;
-        
-            myMap.geoObjects
-                .add(Moscow)
-                .add(SPB)
-                .add(Samara)
-                .add(Kazan)
-                .add(Kaliningrad);
-        
-  /*          Moscow.events
-                .add('mouseenter', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark-hover.png');
-                })
-                .add('mouseleave', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark.png');
-                });
-        
-            SPB.events
-                .add('mouseenter', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark-hover.png');
-                })
-                .add('mouseleave', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark.png');
-                });
-        
-            Samara.events
-                .add('mouseenter', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark-hover.png');
-                })
-                .add('mouseleave', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark.png');
-                });
-        
-            Kazan.events
-                .add('mouseenter', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark-hover.png');
-                })
-                .add('mouseleave', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark.png');
-                });
-        
-            Kaliningrad.events
-                .add('mouseenter', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark-hover.png');
-                })
-                .add('mouseleave', function (e) {
-                    e.get('target').options.set('iconImageHref', '../img/img/mark.png');
-                });
-     */           
-        });
-    })
-
-
-
-
+        if( width < 1200 && width > 1024){
+            if (e.target.parentElement.parentElement == navList1){
+                delitActive();
     
+                e.target.classList.add('nav__nav-link_active');
+    
+                if(e.target.parentElement.querySelector('.nav__minor-list') != null){
+                    e.target.parentElement.querySelector('.nav__minor-list').classList.add('nav__minor-list_active');
+                }
+            }
+        }
+
+        if( width < 1024 && width >720){
+
+            if (e.target.parentElement.parentElement == navList1){
+                delitActive();
+
+                console.log(111)
+
+                e.target.classList.add('nav__nav-link_active');
+
+                if(e.target.parentElement.querySelector('.nav__minor-list') != null){
+                    e.target.parentElement.querySelector('.nav__minor-list').classList.add('nav__minor-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement == navList1){
+                delitActive_50p();
+
+                console.log(222)
+
+                e.target.classList.add('nav__minor-link_active');
+
+                if(e.target.parentElement.querySelector('.nav__zone-list') != null){
+                    e.target.parentElement.querySelector('.nav__zone-list').classList.add('nav__zone-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement == navList1){
+                delitActive_50p();
+
+                console.log(333)
+            }
+        }
+
+        if( width < 720 && width > 540){
+
+            if (e.target.parentElement.parentElement == navList1){
+                delitActive();
+
+                console.log(111)
+
+                if(e.target.parentElement.querySelector('.nav__minor-list') != null){
+                    e.target.parentElement.querySelector('.nav__minor-list').classList.add('nav__minor-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement == navList1){
+                delitActive_50p();
+
+                console.log(222)
+
+                console.log(e.target)
+
+                if (e.target.classList == ('nav__minor-link nav__minor-link_back')){
+                    delitActive();
+                }else{
+                    e.target.classList.add('nav__minor-link_active');
+                }
+
+                if(e.target.parentElement.querySelector('.nav__zone-list') != null){
+                    e.target.parentElement.querySelector('.nav__zone-list').classList.add('nav__zone-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement == navList1){
+                delitActive_50p();
+
+                console.log(333)
+            }
+        }
+
+        if( width < 540){
+
+            if (e.target.parentElement.parentElement == navList1){
+                delitActive();
+
+                console.log(111)
+
+                if(e.target.parentElement.querySelector('.nav__minor-list') != null){
+                    e.target.parentElement.querySelector('.nav__minor-list').classList.add('nav__minor-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement == navList1){
+                delitActive_50p();
+
+                console.log(222)
+
+                console.log(e.target)
+
+                if (e.target.classList == ('nav__minor-link nav__minor-link_back')){
+                    delitActive();
+                }else{
+                    e.target.classList.add('nav__minor-link_active');
+                }
+
+                if(e.target.parentElement.querySelector('.nav__zone-list') != null){
+                    e.target.parentElement.querySelector('.nav__zone-list').classList.add('nav__zone-list_active');
+                }
+            }
+
+            if (e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement == navList1){
+                if (e.target.classList == ('nav__zone-link nav__zone-link_back')){
+                    delitActive_50p()
+                }else{
+                    delitActive();
+                }
+
+                console.log(333)
+            }
+        }
+    })
